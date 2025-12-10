@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         btnToRegister = findViewById(R.id.btnToRegister);
 
         api = new Retrofit.Builder()
-                .baseUrl("https://backend-app-the-duc.vercel.app/api/v1/")
+                .baseUrl("http://10.0.2.2:5000/api/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build().create(ApiService.class);
 

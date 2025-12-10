@@ -1,0 +1,69 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- HEADER -->
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AI Workout"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#111"
+            android:paddingBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bài tập được cá nhân hoá từ AI"
+            android:textSize="15sp"
+            android:textColor="#777"
+            android:paddingBottom="20dp" />
+
+        <!-- CARD CHỌN MỤC TIÊU -->
+
+        <!-- CARD GỢI Ý -->
+        <LinearLayout
+            android:id="@+id/layoutContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg"
+            android:padding="20dp"
+            android:layout_marginTop="20dp"
+            android:elevation="4dp">
+
+            <TextView
+                android:id="@+id/txtWorkoutTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bài tập hôm nay"
+                android:textSize="18sp"
+                android:textColor="#222"
+                android:textStyle="bold" />
+
+            <!-- nơi AI dựng bài tập -->
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnUploadVideo"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="25dp"
+            android:text="🎥 Đánh giá calo qua video"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFF"
+            android:background="@drawable/btn_primary"/>
+
+    </LinearLayout>
+
+</ScrollView>

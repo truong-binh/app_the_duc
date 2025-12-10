@@ -30,6 +30,11 @@
         <activity android:name=".activities.GoalActivity" />
         <activity android:name=".activities.ChatActivity" />
         <receiver android:name=".reminder.ReminderReceiver" />
+        <activity android:name=".activities.WorkoutActivity" />
+        <activity android:name=".activities.VideoCalorieActivity" />
+        <activity android:name=".activities.TrendActivity" />
+        <activity android:name=".activities.ProfileActivity" />
+        <activity android:name=".activities.ActivityTypeActivity" />
     </application>
 
 </manifest>

@@ -50,13 +50,13 @@ public class RegisterActivity extends AppCompatActivity {
         ArrayAdapter<String> genderAdapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_dropdown_item,
-                new String[]{"male", "female"}
+                new String[]{"Nam", "Nữ"}
         );
         spGender.setAdapter(genderAdapter);
 
         // Retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://backend-app-the-duc.vercel.app/api/v1/users/") // Emulator -> backend local
+                .baseUrl("http://10.0.2.2:5000/api/v1/users/") // Emulator -> backend local
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

@@ -8,8 +8,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.app_the_duc"
-        minSdk 36
-        targetSdk 36
+        minSdk 24
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -46,4 +46,6 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0' // nếu muốn chart
     implementation 'com.airbnb.android:lottie:6.0.0'
+    implementation 'com.google.android.gms:play-services-fitness:21.0.0'
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
 }
