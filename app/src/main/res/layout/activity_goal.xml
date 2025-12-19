@@ -28,7 +28,8 @@
             android:backgroundTint="@color/accent_red"
             android:textColor="@color/text_primary"
             android:textColorHint="@color/text_secondary"
-            android:layout_marginBottom="12dp" />
+            android:padding="16dp"
+            android:layout_marginBottom="16dp" />
 
         <EditText
             android:id="@+id/edtCalGoal"
@@ -39,7 +40,8 @@
             android:backgroundTint="@color/accent_red"
             android:textColor="@color/text_primary"
             android:textColorHint="@color/text_secondary"
-            android:layout_marginBottom="12dp" />
+            android:padding="16dp"
+            android:layout_marginBottom="16dp" />
 
         <EditText
             android:id="@+id/edtStart"
@@ -50,7 +52,8 @@
             android:backgroundTint="@color/accent_red"
             android:textColor="@color/text_primary"
             android:textColorHint="@color/text_secondary"
-            android:layout_marginBottom="12dp" />
+            android:padding="16dp"
+            android:layout_marginBottom="16dp" />
 
         <EditText
             android:id="@+id/edtEnd"
@@ -61,6 +64,7 @@
             android:backgroundTint="@color/accent_red"
             android:textColor="@color/text_primary"
             android:textColorHint="@color/text_secondary"
+            android:padding="16dp"
             android:layout_marginBottom="20dp" />
 
         <Button

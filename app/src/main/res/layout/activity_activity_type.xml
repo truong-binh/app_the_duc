@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/input_bg"
             android:padding="12dp"
-            android:layout_marginBottom="24dp" />
+            android:layout_marginBottom="32dp" />
 
         <!-- Duration -->
         <TextView
@@ -76,7 +76,7 @@
             android:textColor="@color/text_primary"
             android:textColorHint="@color/text_secondary"
             android:padding="12dp"
-            android:layout_marginBottom="24dp" />
+            android:layout_marginBottom="32dp" />
 
         <!-- Heart Rate Card -->
         <LinearLayout

@@ -58,8 +58,8 @@
             android:background="@drawable/input_bg"
             android:textColor="@color/text_primary"
             android:textColorHint="@color/text_secondary"
-            android:padding="12dp"
-            android:layout_marginBottom="12dp" />
+            android:padding="16dp"
+            android:layout_marginBottom="16dp" />
 
         <EditText
             android:id="@+id/edtEmail"
@@ -70,8 +70,8 @@
             android:background="@drawable/input_bg"
             android:textColor="@color/text_primary"
             android:textColorHint="@color/text_secondary"
-            android:padding="12dp"
-            android:layout_marginBottom="12dp" />
+            android:padding="16dp"
+            android:layout_marginBottom="16dp" />
 
         <EditText
             android:id="@+id/edtAge"
@@ -82,8 +82,8 @@
             android:background="@drawable/input_bg"
             android:textColor="@color/text_primary"
             android:textColorHint="@color/text_secondary"
-            android:padding="12dp"
-            android:layout_marginBottom="12dp" />
+            android:padding="16dp"
+            android:layout_marginBottom="16dp" />
 
         <EditText
             android:id="@+id/edtHeight"
@@ -94,8 +94,8 @@
             android:background="@drawable/input_bg"
             android:textColor="@color/text_primary"
             android:textColorHint="@color/text_secondary"
-            android:padding="12dp"
-            android:layout_marginBottom="12dp" />
+            android:padding="16dp"
+            android:layout_marginBottom="16dp" />
 
         <EditText
             android:id="@+id/edtWeight"
@@ -106,7 +106,7 @@
             android:background="@drawable/input_bg"
             android:textColor="@color/text_primary"
             android:textColorHint="@color/text_secondary"
-            android:padding="12dp"
+            android:padding="16dp"
             android:layout_marginBottom="24dp" />
 
         <Button

@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/card_bg"
-            android:padding="20dp"
+            android:padding="24dp"
             android:layout_marginTop="20dp"
             android:elevation="4dp">
 
@@ -46,9 +46,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bài tập hôm nay"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textColor="#222"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
 
             <!-- nơi AI dựng bài tập -->
         </LinearLayout>

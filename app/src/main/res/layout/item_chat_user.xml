@@ -3,14 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="end"
-    android:padding="4dp">
+    android:padding="8dp">
     <TextView
         android:id="@+id/txtMessage"
         android:background="@drawable/bg_bubble_user"
-        android:padding="12dp"
+        android:padding="16dp"
         android:textColor="#fff"
         android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxWidth="260dp" />
+        android:maxWidth="300dp" />
 </LinearLayout>
