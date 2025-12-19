@@ -792,6 +792,7 @@ public class DashboardActivity extends AppCompatActivity implements SensorEventL
     }
 
     private void drawBarChart(List<ActivityItem> items) {
+        // Gom dữ liệu theo ngày, lấy bước cao nhất mỗi ngày
         Map<String, Integer> grouped = new LinkedHashMap<>();
         for (ActivityItem it : items) {
             if (it.date == null) continue;
@@ -799,6 +800,7 @@ public class DashboardActivity extends AppCompatActivity implements SensorEventL
             if (cur == null || it.steps > cur) grouped.put(it.date, it.steps);
         }
 
+        // Lấy 7 ngày gần nhất
         List<String> allDates = new ArrayList<>(grouped.keySet());
         Collections.sort(allDates, (a, b) -> b.compareTo(a));
         List<String> last7 = allDates.subList(0, Math.min(7, allDates.size()));
@@ -810,20 +812,42 @@ public class DashboardActivity extends AppCompatActivity implements SensorEventL
         for (int i = 0; i < last7.size(); i++) {
             String d = last7.get(i);
             entries.add(new BarEntry(i, grouped.get(d)));
-            labels.add(d.substring(5));
+            labels.add(d.substring(5)); // chỉ hiển thị MM-dd
         }
 
+        // Tạo dataset
         BarDataSet set = new BarDataSet(entries, "Bước/ngày");
         set.setColor(getResources().getColor(R.color.accent_red));
+
+        // --- Chữ giá trị trên thanh màu trắng ---
+        set.setValueTextColor(getResources().getColor(android.R.color.white));
+        set.setValueTextSize(12f);
 
         BarData data = new BarData(set);
         data.setBarWidth(0.6f);
         barChart.setData(data);
 
+        // --- Trục X ---
         XAxis xAxis = barChart.getXAxis();
         xAxis.setValueFormatter(new IndexAxisValueFormatter(labels));
-        barChart.invalidate();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setDrawGridLines(false);
+        xAxis.setTextColor(getResources().getColor(android.R.color.white)); // chữ trục X trắng
+        xAxis.setTextSize(12f);
+
+        // --- Trục Y ---
+        barChart.getAxisLeft().setTextColor(getResources().getColor(android.R.color.white)); // chữ trục Y trái trắng
+        barChart.getAxisRight().setTextColor(getResources().getColor(android.R.color.white)); // chữ trục Y phải trắng
+
+        // --- Legend ---
+        barChart.getLegend().setTextColor(getResources().getColor(android.R.color.white));
+
+        // Disable description
+        barChart.getDescription().setEnabled(false);
+
+        barChart.invalidate(); // cập nhật biểu đồ
     }
+
 
     // ---------------- Goals ---------------- 
     private void fetchGoalAndApply() {

@@ -20,9 +20,10 @@
 
             <Button
                 android:id="@+id/btnBackActivity"
-                android:text="← Quay lại"
+                android:text="←"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
+                android:textSize="40sp"
                 android:backgroundTint="@color/accent_red"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
