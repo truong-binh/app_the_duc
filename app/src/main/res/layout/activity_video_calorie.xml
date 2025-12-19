@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="#FAF9FF">
+
+    <Button
+        android:id="@+id/btnPickVideo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="🎥 Chọn video"
+        android:textSize="18sp"
+        android:backgroundTint="#6A5AE0"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:padding="10dp"
+        android:shape="rectangle" />
+
+    <Button
+        android:id="@+id/btnUploadVideo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="🔥 Tính calories"
+        android:textSize="18sp"
+        android:backgroundTint="#8B5CF6"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:padding="10dp"/>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chưa có kết quả"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#4A4A4A"
+        android:paddingTop="24dp"/>
+</LinearLayout>
