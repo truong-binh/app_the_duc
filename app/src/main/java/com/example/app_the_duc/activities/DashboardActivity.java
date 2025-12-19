@@ -163,12 +163,7 @@ public class DashboardActivity extends AppCompatActivity implements SensorEventL
         // 🔥 REQUEST GOOGLE FIT PERMISSION
         requestGoogleFitPermissions();
         IntentFilter filter = new IntentFilter("UPDATE_ACTIVITY_FROM_VIDEO");
-
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            registerReceiver(videoUpdateReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
-        } else {
-            registerReceiver(videoUpdateReceiver, filter);
-        }
+        ContextCompat.registerReceiver(this, videoUpdateReceiver, filter, ContextCompat.RECEIVER_NOT_EXPORTED);
     }
 
     private final BroadcastReceiver videoUpdateReceiver = new BroadcastReceiver() {

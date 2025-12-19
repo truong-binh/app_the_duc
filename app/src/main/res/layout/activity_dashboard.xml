@@ -6,462 +6,481 @@
     android:layout_height="match_parent"
     tools:context=".activities.DashboardActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
+<LinearLayout
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+<!-- Quick Actions Header -->
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:gravity="center_vertical">
+
+    <Button
+        android:id="@+id/btnGoal"
+        android:text="Mục tiêu"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/accent_red"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginEnd="4dp" />
+
+    <Button
+        android:id="@+id/btnChat"
+        android:text="Chat AI"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/accent_blue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp" />
+
+    <Button
+        android:id="@+id/btnTrend"
+        android:text="Xu hướng"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/accent_red"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="4dp" />
+</LinearLayout>
+
+<!-- Secondary Actions -->
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp">
+
+    <Button
+        android:id="@+id/btnWorkoutAI"
+        android:text="AI tập luyện"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/accent_blue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginEnd="4dp" />
+
+    <Button
+        android:id="@+id/btnActivityType"
+        android:text="🏃 Hoạt động"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/accent_red"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp" />
+
+    <Button
+        android:id="@+id/btnProfile"
+        android:text="Hồ sơ"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#757575"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="4dp" />
+</LinearLayout>
+
+<!-- Activity Ring Card - Primary KPI -->
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@color/card_dark"
+    android:padding="24dp"
+    android:layout_marginBottom="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="8dp">
+
+    <!-- Center ring with Lottie fallback -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="220dp"
+        android:foregroundGravity="center"
+        android:layout_gravity="center">
+
+        <!-- Progress circle -->
+        <ProgressBar
+            android:id="@+id/progressCircle"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/circle_ring"
+            android:layout_gravity="center"
+            android:layout_width="160dp"
+            android:layout_height="160dp" />
 
         <TextView
-            android:text="Tóm tắt"
-            android:textSize="28sp"
-            android:textColor="@color/text_primary"
+            android:id="@+id/txtRingCenter"
+            android:text="0 CAL"
+            android:textColor="@color/accent_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:textSize="20sp"
+            android:layout_gravity="center" />
+    </FrameLayout>
 
-        <!-- Header -->
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:gravity="center_vertical"
-            android:paddingBottom="8dp">
+    <!-- small summary below -->
+    <TextView
+        android:id="@+id/txtRingSubtitle"
+        android:text="Di chuyển"
+        android:textColor="@color/text_secondary"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp" />
 
+    <!-- Goal extra info -->
+    <TextView
+        android:id="@+id/txtGoalCal"
+        android:textColor="@color/text_secondary"
+        android:layout_marginTop="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp" />
 
-            <Button
-                android:id="@+id/btnGoal"
-                android:text="Mục tiêu"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="@color/accent_red"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp" />
+    <TextView
+        android:id="@+id/txtGoalPeriod"
+        android:textColor="@color/text_secondary"
+        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp" />
+</LinearLayout>
 
-            <Button
-                android:id="@+id/btnChat"
-                android:text="Chat AI"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="@color/accent_red"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp" />
+<!-- Key Metrics Row - Steps & Distance -->
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="2"
+    android:layout_marginBottom="16dp">
 
-            <Button
-                android:id="@+id/btnTrend"
-                android:text="Xu hướng"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="@color/accent_red"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp" />
+    <!-- Steps box -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/card_dark"
+        android:padding="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:gravity="center">
 
-            <Button
-                android:id="@+id/btnLogout"
-                android:text="Đăng xuất"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#757575"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/txtSteps"
+            android:text="0"
+            android:textColor="@color/text_primary"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp">
+        <TextView
+            android:text="Bước"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
-            <Button
-                android:id="@+id/btnWorkoutAI"
-                android:text="AI tập luyện"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="@color/accent_red"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginEnd="4dp" />
+    <!-- Distance box -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/card_dark"
+        android:padding="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:gravity="center">
 
-            <Button
-                android:id="@+id/btnActivityType"
-                android:text="🏃 Hoạt động"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="@color/accent_red"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp" />
+        <TextView
+            android:id="@+id/txtDistance"
+            android:text="0.00 km"
+            android:textColor="@color/text_primary"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-            <Button
-                android:id="@+id/btnProfile"
-                android:text="Hồ sơ"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="@color/accent_red"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="4dp" />
-        </LinearLayout>
+        <TextView
+            android:text="Quãng đường"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
 
-        <!-- Activity Ring Card -->
+<!-- Weekly Summary Card -->
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@color/card_dark"
+    android:padding="20dp"
+    android:layout_marginBottom="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="6dp">
+
+    <TextView
+        android:text="📊 Tuần này"
+        android:textColor="@color/text_primary"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
         <LinearLayout
             android:orientation="vertical"
-            android:background="@color/card_dark"
-            android:padding="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="12dp"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:elevation="6dp">
+            android:layout_weight="1"
+            android:layout_marginEnd="12dp"
+            android:gravity="center">
 
-            <!-- Center ring with Lottie fallback -->
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:foregroundGravity="center"
-                android:layout_gravity="center">
-
-                <!-- Progress circle -->
-                <ProgressBar
-                    android:id="@+id/progressCircle"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:indeterminate="false"
-                    android:max="100"
-                    android:progress="0"
-                    android:progressDrawable="@drawable/circle_ring"
-                    android:layout_gravity="center"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp" />
-
-                <TextView
-                    android:id="@+id/txtRingCenter"
-                    android:text="0 CAL"
-                    android:textColor="@color/accent_red"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:layout_gravity="center" />
-            </FrameLayout>
-
-            <!-- small summary below -->
             <TextView
-                android:id="@+id/txtRingSubtitle"
-                android:text="Di chuyển"
-                android:textColor="@color/text_secondary"
-                android:layout_marginTop="12dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <!-- Goal extra info -->
-            <TextView
-                android:id="@+id/txtGoalCal"
-                android:textColor="@color/text_secondary"
-                android:layout_marginTop="6dp"
+                android:id="@+id/txtWeeklySteps"
+                android:text="0"
+                android:textColor="@color/accent_red"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/txtGoalPeriod"
+                android:text="Bước"
                 android:textColor="@color/text_secondary"
+                android:textSize="12sp"
                 android:layout_marginTop="4dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
-        <!-- Steps & Distance Row -->
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:gravity="center_vertical">
-
-            <!-- Steps box -->
-            <LinearLayout
-                android:orientation="vertical"
-                android:background="@color/card_dark"
-                android:padding="14dp"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:elevation="5dp">
-
-                <TextView
-                    android:text="Số bước"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="14sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/txtSteps"
-                    android:text="0"
-                    android:textColor="@color/text_primary"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="6dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <!-- Distance box -->
-            <LinearLayout
-                android:orientation="vertical"
-                android:background="@color/card_dark"
-                android:padding="14dp"
-                android:layout_marginStart="8dp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:elevation="5dp">
-
-                <TextView
-                    android:text="Quãng đường"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="14sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/txtDistance"
-                    android:text="0.00 km"
-                    android:textColor="@color/text_primary"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="6dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Weekly Summary Card -->
         <LinearLayout
             android:orientation="vertical"
-            android:background="@color/card_dark"
-            android:padding="16dp"
-            android:layout_marginTop="14dp"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:elevation="5dp">
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:gravity="center">
 
             <TextView
-                android:text="📊 Tóm tắt tuần này"
-                android:textColor="@color/text_primary"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp" />
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="2">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="8dp">
-
-                    <TextView
-                        android:text="Tổng bước"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="12sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/txtWeeklySteps"
-                        android:text="0"
-                        android:textColor="@color/accent_red"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp">
-
-                    <TextView
-                        android:text="Tổng calo"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="12sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/txtWeeklyCalories"
-                        android:text="0"
-                        android:textColor="@color/accent_red"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/txtStreakDays"
-                android:text="🔥 Chuỗi ngày: 0"
-                android:textColor="@color/text_secondary"
-                android:textSize="14sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp" />
-
-            <TextView
-                android:id="@+id/txtHeartRateAvg"
-                android:text="❤️ Nhịp tim TB: --"
-                android:textColor="@color/text_secondary"
-                android:textSize="14sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp" />
-
-            <TextView
-                android:id="@+id/txtActivityTypes"
-                android:text="📊 Hoạt động: --"
-                android:textColor="@color/text_secondary"
-                android:textSize="14sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp" />
-        </LinearLayout>
-
-        <!-- Chart 7-day -->
-        <LinearLayout
-            android:orientation="vertical"
-            android:background="@color/card_dark"
-            android:padding="12dp"
-            android:layout_marginTop="14dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="5dp">
-
-            <TextView
-                android:text="Lịch sử 7 ngày"
-                android:textColor="@color/text_primary"
-                android:textStyle="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/barChart"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="8dp" />
-        </LinearLayout>
-
-        <!-- Quick Stats Cards -->
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:weightSum="2">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:background="@color/card_dark"
-                android:padding="14dp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                android:elevation="5dp">
-
-                <TextView
-                    android:text="⚡ Tốc độ TB"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/txtAvgSpeed"
-                    android:text="0 km/h"
-                    android:textColor="@color/text_primary"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:background="@color/card_dark"
-                android:padding="14dp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="8dp"
-                android:elevation="5dp">
-
-                <TextView
-                    android:text="⏱ Thời gian hoạt động"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/txtActiveTime"
-                    android:text="0 phút"
-                    android:textColor="@color/text_primary"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Trend box -->
-        <LinearLayout
-            android:orientation="vertical"
-            android:background="@color/card_dark"
-            android:padding="16dp"
-            android:layout_marginTop="14dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="5dp">
-
-            <TextView
-                android:text="💡 Gợi ý AI"
-                android:textColor="@color/text_primary"
+                android:id="@+id/txtWeeklyCalories"
+                android:text="0"
+                android:textColor="@color/green_active"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/txtTrendContent"
+                android:text="Calo"
                 android:textColor="@color/text_secondary"
-                android:layout_marginTop="8dp"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/txtStreakDays"
+            android:text="🔥 0 ngày"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txtHeartRateAvg"
+            android:text="❤️ -- bpm"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txtActivityTypes"
+            android:text="📊 --"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center" />
+    </LinearLayout>
+</LinearLayout>
+
+<!-- Chart 7-day -->
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@color/card_dark"
+    android:padding="16dp"
+    android:layout_marginBottom="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="6dp">
+
+    <TextView
+        android:text="Lịch sử 7 ngày"
+        android:textColor="@color/text_primary"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+</LinearLayout>
+
+<!-- Quick Stats Cards -->
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="14dp"
+    android:weightSum="2">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/card_dark"
+        android:padding="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginEnd="8dp"
+        android:elevation="6dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txtAvgSpeed"
+            android:text="0 km/h"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Tốc độ TB"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/card_dark"
+        android:padding="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="8dp"
+        android:elevation="6dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txtActiveTime"
+            android:text="0 phút"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Thời gian"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
+
+<!-- AI Insights -->
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@color/card_dark"
+    android:padding="16dp"
+    android:layout_marginBottom="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="6dp">
+
+    <TextView
+        android:text="💡 Gợi ý AI"
+        android:textColor="@color/text_primary"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/txtTrendContent"
+        android:textColor="@color/text_secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp" />
+</LinearLayout>
+
+<!-- Logout Button -->
+<Button
+    android:id="@+id/btnLogout"
+    android:text="Đăng xuất"
+    android:textAllCaps="false"
+    android:textColor="#FFFFFF"
+    android:backgroundTint="#757575"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp" />
 
     </LinearLayout>
 </ScrollView>
